@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">AirHotel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- トップページを読み込む。%= link_to "AirHotel", root_path, class: "navbar-brand" -->
+    
+    <div class="collapse navbar-collapse">
+      <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="エリア" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="キーワード" aria-label="Search">
+      </form>
+    </div>
+    
+    <ul class="navbar-nav">
+      <% if !user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class:"nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.fullname %>
+            <!-- %= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp; -->
+            <!-- %= current_user.fullname %> <span class="caret"></span> -->
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">ルーム登録</a></li>
+            <li><a class="dropdown-item" href="#">予約ルーム一覧</a></li>
+            <li><a class="dropdown-item" href="#">登録ルーム一覧</a></li>
+            <!--<li> %= link_to "ルーム登録", new_room_session_path %></li>-->
+            <!--<li> %= link_to "予約ルーム一覧", your_reservations_path %></li>-->
+            <!--<li> %= link_to "登録ルーム一覧", your_registrations_path %></li>-->
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <%= link_to "プロフィール編集", edit_user_registration_path, class:"dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item"%>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

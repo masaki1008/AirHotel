@@ -58,3 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap'
+
+gem 'rails-i18n'
+
+gem 'devise'
+gem 'devise-i18n'
