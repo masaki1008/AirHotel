@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/AirHotel/app/views/devise/registrations/edit.html.erb:59 #<Class:0x0000000004c0b530>#_app_views_devise_registrations_edit_html_erb__992265198112180546_39485820:
+
+    [1;34m54[0m:                 <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード", class: "form-control" %>
+    [1;34m55[0m:               </div>
+    [1;34m56[0m:             
+    [1;34m57[0m:               <div class="actions">
+    [1;34m58[0m:                 <%= f.submit "更新する", class:"btn btn btn-normal btn-block" %>
+ => [1;34m59[0m:                 <% binding.pry %>
+    [1;34m60[0m:               </div>
+    [1;34m61[0m:             <% end %>
+    [1;34m62[0m:           <% end %>
+    [1;34m63[0m:         </div>
+    [1;34m64[0m:       </div>
+
