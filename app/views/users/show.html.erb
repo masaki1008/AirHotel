@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "プロフィール確認", user_path(current_user.id), class: "sidebar-link active" %></li>
+    </ul>
+    <br/>
+    <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-default" %>
+  </div>
+  <div class="col-md-4  text-center">
+    <div class="center">
+      プロフィール画像を挿入
+    </div>
+    <div class="card card-default">
+      <div class="card-heading text-center">プロフィール確認</div>
+      <div class="card-body">
+        <div class="email">メールアドレス</div><%= @user.email %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5  text-center">
+    <h2><%= @user.fullname %></h2>
+
+    <div class="description row-space-3">
+      <%= @user.description %>
+    </div>
+  </div>
+</div>
