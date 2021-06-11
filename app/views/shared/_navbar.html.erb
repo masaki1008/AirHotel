@@ -25,15 +25,18 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <!--%= image_tag @user.image.url %>&nbsp;-->
+            <!-- %= image_tag image_url(current_user), class: "img-circle avatar-small" %>&nbsp-->
             <%= current_user.fullname %>
             <!-- %= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp; -->
             <!-- %= current_user.fullname %> <span class="caret"></span> -->
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">ルーム登録</a></li>
+            <li>
+              <%= link_to "ルーム登録", new_room_path, class:"dropdown-item" %>
+              
+              <%= link_to "登録ルーム一覧", rooms_path, class:"dropdown-item" %>
+            </li>
             <li><a class="dropdown-item" href="#">予約ルーム一覧</a></li>
-            <li><a class="dropdown-item" href="#">登録ルーム一覧</a></li>
             <!--<li> %= link_to "ルーム登録", new_room_session_path %></li>-->
             <!--<li> %= link_to "予約ルーム一覧", your_reservations_path %></li>-->
             <!--<li> %= link_to "登録ルーム一覧", your_registrations_path %></li>-->

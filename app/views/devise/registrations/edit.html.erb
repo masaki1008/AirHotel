@@ -1,4 +1,5 @@
 <div class="row">
+  
   <div class="col-md-3">
     <ul class="sidebar-list">
       <li class="sidebar-item"><%= link_to "プロフィール編集", edit_user_registration_path, class: "sidebar-link active" %></li>
@@ -6,6 +7,7 @@
     <br/>
     <%= link_to "プロフィール確認", user_path(current_user.id), class: "btn btn-default" %>
   </div>
+  
   <div class="col-md-9 text-center">
     <div class="card card-default">
       <div class="card-heading align-middle">プロフィール</div>
@@ -20,14 +22,14 @@
               </div>
               
               <div class="form-group">
-              <% if @user.image? %>
-                <%= image_tag @user.image.url %>
-              <% else %>
-                <%= image_tag "/assets/default.jpg", :size => '100x100' %>
-              <% end %>
-              <button type="button" class="btn btn-outline-secondary rounded-pill">
-                <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-              </button>
+                <% if @user.image? %>>
+                  <%= image_tag@user.image_url %>
+                <% else %>
+                  <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+                <% end %>
+                <button type="button" class="btn btn-outline-secondary rounded-pill">
+                  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+                </button>
               </div>
               
               <div class="form-group">
@@ -39,7 +41,7 @@
               </div>
               
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
               
               <div class="form-group">
@@ -50,12 +52,8 @@
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "form-control" %>
               </div>
             
-              <div class="form-group">
-                <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード", class: "form-control" %>
-              </div>
-            
               <div class="actions">
-                <%= f.submit "更新する", class:"btn btn btn-normal btn-block" %>
+                <%= f.submit "更新する", class:"btn btn-normal btn-block" %>
               </div>
             <% end %>
           <% end %>

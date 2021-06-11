@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/AirHotel/app/views/devise/registrations/edit.html.erb:20 #<Class:0x0000000006a8db48>#_app_views_devise_registrations_edit_html_erb___1550361554107722943_55871100:
+
+    [1;34m15[0m:         <div class="container">
+    [1;34m16[0m:           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    [1;34m17[0m:             <%= render "devise/shared/error_messages", resource: resource %>
+    [1;34m18[0m:             
+    [1;34m19[0m:             <%= form_for(@user) do |f| %>
+ => [1;34m20[0m:               <% binding.pry %>
+    [1;34m21[0m:               <div class="form-group">
+    [1;34m22[0m:                 <%= f.text_field :fullname, autofocus: true, autocomplete: "フルネーム", placeholder: "フルネーム", class: "form-control" %>
+    [1;34m23[0m:               </div>
+    [1;34m24[0m:               
+    [1;34m25[0m:               <div class="form-group">
+

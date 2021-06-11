@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  private
-  #ストロングパラメーター
-  def user_params
-    params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :decoration, :image )
+  protected
+  # deviseのpermitted_parameterを追加する
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:account_update, keys: [:image] )
   end
   
 end
