@@ -36,4 +36,10 @@ class RoomsController < ApplicationController
       flash[:notice] = "ユーザーを削除しました"
       redirect_to :rooms
   end
+  
+  protected
+  # deviseのpermitted_parameterを追加する
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:account_update, keys: [:image] )
+  end
 end
