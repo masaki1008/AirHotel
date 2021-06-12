@@ -6,4 +6,5 @@ class Room < ApplicationRecord
   validates :price, numericality: true
   validates :address, presence: true
   
+  mount_uploader :image, ImageUploader
 end
