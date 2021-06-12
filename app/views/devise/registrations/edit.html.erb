@@ -1,19 +1,18 @@
 <div class="row">
   
-  <div class="col-md-3">
+  <div class="col-md-2">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "プロフィール編集", edit_user_registration_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item text-center"><%= link_to "プロフィール編集", edit_user_registration_path, class: "sidebar-link active" %></li>
     </ul>
-    <br/>
-    <%= link_to "プロフィール確認", user_path(current_user.id), class: "btn btn-default" %>
+    <%= link_to " アカウント確認", user_path(current_user.id), class: "btn btn-default" %>
   </div>
   
-  <div class="col-md-9 text-center">
+  <div class="col-md-7 text-center margin">
     <div class="card card-default">
       <div class="card-heading align-middle">プロフィール</div>
       <div class="card-body">
         <div class="container">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put,multipart: :true}) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             
             <%= form_for(@user) do |f| %>
@@ -23,10 +22,11 @@
               
               <div class="form-group">
                 <% if @user.image? %>>
-                  <%= image_tag@user.image_url %>
+                  <%= image_tag @user.image_url, :size => '200x200' %>
                 <% else %>
-                  <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+                  <%= image_tag "/assets/default.jpg", :size => '200x200' %>
                 <% end %>
+                </br></br>
                 <button type="button" class="btn btn-outline-secondary rounded-pill">
                   <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
                 </button>
@@ -59,7 +59,7 @@
           <% end %>
         </div>
       </div>
+      
     </div>
-    
   </div>
 </div>

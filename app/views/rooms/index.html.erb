@@ -1,11 +1,12 @@
 <div class="row">
+  
   <div class="col-md-2">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "ルーム登録", new_room_path, class:"sidebar-link active" %></li>
-      <li class="sidebar-item"><a href="#">予約ルーム一覧</a></li>
-    </ul>
+    <%= link_to " ルーム登録", new_room_path, class: "btn btn-default" %>
+    </br></br>
+    <li><a href="#">予約ルーム一覧</a></li>
   </div>
-  <div class="col-md-10">
+  
+  <div class="col-md-10 text-center">
     <div class="card card-default text-center">
       <div class="card-heading">
         登録ルーム一覧
@@ -24,16 +25,18 @@
         <tbody>
           <% @rooms.each do |room| %>
             <tr>
-              <td><%= image_tag @room.image.url %></td>
-              <td><%= room.room_name %><%= link_to "room.room_name", show_room_path %></td>
-              <td><%= room.description %></td>
-              <td><%= room.price %></td>
-              <td><%= room.created_at %></td>
+              <td class="td"><%= room.image %></td>
+              <td class="td"><%= room.room_name %><%= link_to "詳細", room %></td>
+              <td class="td"><%= room.description %></td>
+              <td class="td"><%= room.price %></td>
+              <td class="td"><%= room.created_at %></td>
+              <td><%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-default" %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
   </div>
+  
 </div>
 

@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 
 @import "bootstrap";
 
@@ -30,16 +16,21 @@ body {
   text-align: center;
 }
 
-.container {
-  width: 80%;
-}
-
 .label {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: left;
   font-size: 20px;
   color: #FF5A5F;
+}
+
+.td {
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.margin {
+  margin-left: 60px;
 }
 
 // FORM
@@ -58,6 +49,10 @@ body {
   font-weight: 400;
 }
 
+.navbar-nav .nav-link {
+  text-align: right;
+  width: 400px;
+}
 // BUTTONS
 .btn {
   color: #fff;
@@ -90,6 +85,12 @@ body {
   border-radius: 2px;
   padding: 10px 0;
   margin-top: 10px;
+}
+
+
+.btn.btn-blue {
+  border: 1px solid #3B5998;
+  background-color: #3B5998;
 }
 
 // CARDS
@@ -158,4 +159,17 @@ body {
   color: #565A5C;
   font-weight: bold;
   text-decoration: none;
+}
+
+// image
+.img-fluid {
+  max-width: 10%;
+}
+
+.nav-link img {
+  border-radius: 100px;
+}
+
+.img-fluid-show {
+  max-width: 263px;
 }

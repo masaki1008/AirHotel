@@ -8,10 +8,10 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(params.require(:room).permit(:room_name, :description, :price, :address, :image))
+    @room = current_user.rooms.new(params.require(:room).permit(:room_name, :description, :price, :address, :image))
     #以下のsaveメソッドで保存がされません
     if @room.save
-      flash[:notice] = "ルームを新規登録しました"
+      flash[:notice] = "ルームを保存しました"
       redirect_to :rooms
     else
       #こちらの処理が実行されます。
@@ -31,5 +31,9 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    @room = Room.find(params[:id])
+      @room.destroy
+      flash[:notice] = "ユーザーを削除しました"
+      redirect_to :rooms
   end
 end
