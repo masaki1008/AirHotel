@@ -51,8 +51,10 @@ body {
 
 .navbar-nav .nav-link {
   text-align: right;
-  width: 400px;
+  // width: 400px;（どこかがくずれる）
+  
 }
+
 // BUTTONS
 .btn {
   color: #fff;
