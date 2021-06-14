@@ -66,6 +66,7 @@ gem 'devise-i18n'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
 gem 'pry-rails'
 
