@@ -26,7 +26,8 @@ body {
 
 .td {
   margin-bottom: 10px;
-  border-bottom: 1px solid;
+  border-bottom: 1px dashed;
+  border-color: gray;
 }
 
 .margin {
@@ -174,4 +175,8 @@ body {
 
 .img-fluid-show {
   max-width: 263px;
+}
+
+.img-index {
+ width: 300px; 
 }
