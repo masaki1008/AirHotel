@@ -1,31 +1,32 @@
-<div class="row">
-  <div class="col-md-4 offset-md-4">
-    <h2 class="text-center">新規アカウントを作成</h2>
-    <br/>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <h2 class="text-center">新規アカウントを作成</h2>
+      <br/>
+  
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        
+        <div class="form-group">
+          <%= f.text_field :fullname, autofocus: true, autocomplete: "フルネーム", placeholder: "フルネーム", class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス", placeholder: "メールアドレス", class: "form-control" %>
+        </div>
       
-      <div class="form-group">
-        <%= f.text_field :fullname, autofocus: true, autocomplete: "フルネーム", placeholder: "フルネーム", class: "form-control" %>
-      </div>
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "パスワード", placeholder: "パスワード（6文字以上）", class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "パスワード", placeholder: "パスワード確認", class: "form-control" %>
+        </div>
       
-      <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス", placeholder: "メールアドレス", class: "form-control" %>
-      </div>
-    
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "パスワード", placeholder: "パスワード（6文字以上）", class: "form-control" %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "パスワード", placeholder: "パスワード確認", class: "form-control" %>
-      </div>
-    
-      <div class="actions">
-        <%= f.submit "登録する", class:"btn btn btn-normal btn-block" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "登録する", class:"btn btn btn-normal btn-block" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-

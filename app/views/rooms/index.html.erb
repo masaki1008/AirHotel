@@ -1,44 +1,46 @@
-<div class="row">
-  
-  <div class="col-md-3 text-center d-grid gap-2 col-6 mx-auto">
-    <%= link_to " ルーム登録", new_room_path, class: "btn btn-default" %>
-    <a href="#">予約ルーム一覧</a>
-    </br>
-  </div>
-  
-  <div class="col-md-15">
-    <div class="text-center">
-      <div class="card card-default text-center">
-        <div class="card-heading">
-          登録ルーム一覧
-        </div>
+<div class="container">
+  <div class="row">
+    
+    <div style="margin-bottom: 30px;">
+      <div class="col-md-4 text-center d-grid gap-2 col-6 mx-auto d-flex margin">
+        <%= link_to " ルーム登録", new_room_path, class: "btn btn-default" %>
         </br>
-        <table>
-          <thead>
-            <tr>
-              <th>ルーム画像</th>
-              <th>ルーム名</th>
-              <th>ルーム紹介</th>
-              <th>料金</th>
-              <th>作成日</th>
-            </tr>
-          </thead>
-   
-          <tbody>
-            <% @rooms.each do |room| %>
+        <%= link_to " 予約ルーム一覧", reservations_path, class: "btn btn-default" %>
+      </div>
+    </div>
+    <div class="col-md-15">
+      <div class="text-center">
+        <div class="card card-default text-center">
+          <div class="card-heading">
+            登録ルーム一覧
+          </div>
+          </br>
+          <table>
+            <thead>
               <tr>
-                <td class="td"><img src="<%= room.image_url %>" class="img-index"></td>
-                <td class="td"><%= room.room_name %><%= link_to "詳細", room %></td>
-                <td class="td"><%= room.description %></td>
-                <td class="td"><%= room.price %></td>
-                <td class="td"><%= room.created_at %></td>
-                <td><%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-default" %></td>
+                <th>ルーム画像</th>
+                <th>ルーム名</th>
+                <th>ルーム紹介</th>
+                <th>料金</th>
+                <th>作成日</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+     
+            <tbody>
+              <% @rooms.each do |room| %>
+                <tr>
+                  <td class="td"><img src="<%= room.image_url %>" class="img-index"></td>
+                  <td class="td text-nowrap"><%= link_to room.room_name, room %>
+                  <td class="td" style="width: 200px;"><%= room.description %></td>
+                  <td class="td 1.4.floor"> &yen; <%= room.price %></td>
+                  <td class="td"><%= room.created_at %></td>
+                  <td><%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-default text-nowrap" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

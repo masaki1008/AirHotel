@@ -1,11 +1,28 @@
-
-
 @import "bootstrap";
 
 body {
   color: #565a5c;
-  background-color: #F8F8F8;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #F8F8F8;
+}
+
+.picture {
+  background-image: url(https://mmmmovie.up.seesaa.net/image/HNCK7388.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.eria {
+  height: 550px;
+  display: flex;
+  align-items: center;
+}
+
+.form-area {
+  width: 430px;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 5px;
 }
 
 .notice {
@@ -166,7 +183,7 @@ body {
 
 // image
 .img-fluid {
-  max-width: 10%;
+  max-width: 8%;
 }
 
 .nav-link img {
