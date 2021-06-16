@@ -1,57 +1,56 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2">
-      <%= link_to "ルーム登録", new_room_path, class:"btn btn-default" %>
-      </br></br>
-      <%= link_to " 登録ルーム一覧", rooms_path, class: "btn btn-default" %>
-      </br></br>
-      <%= link_to " 予約ルーム一覧", reservations_path, class: "btn btn-default" %>
-      </br></br>
-      <li><a href="#">予約ルーム一覧</a></li>
-    </div>
     
-    <div class="col-md-8 text-center margin">
-      <div class="card card-default">
-        <div class="card-heading align-middle">
-          ルーム詳細
+    <div style="margin-bottom: 30px;">
+      <div class="col-md-5 text-center d-grid gap-2 col-6 mx-auto d-flex">
+        <%= link_to " ルーム登録", new_room_path, class: "btn btn-default" %>
+        </br>
+        <%= link_to " 登録ルーム一覧", rooms_path, class: "btn btn-default" %>
+        </br>
+        <%= link_to " 予約ルーム一覧", reservations_path, class: "btn btn-default" %>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="col-md-7">
+        <div class="card card-default">
+          <div class="card-heading align-middle text-center">
+            予約情報
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <div style="margin-bottom: 20px;">
+                <img src="<%= @room.image_url %>" class="img-max">
+              </div>
+              <div style="margin-bottom: 20px;">
+                <h4><%= @room.room_name %></h4>
+                <p><%= @room.address %></p>
+              </div>
+              <div>
+                <h3><%= @room.description %></h3>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="container">
-            <%= form_for @room do |f| %>
-              <div class="form-group">
-                <label class="label">ルーム名</label>
-                <%= f.text_field :room_name, autofocus: true, autocomplete: "ルーム名", placeholder: "ルーム名を入力",class: "form-control" %>
-              </div>
-              
-              <div class="form-group">
-                <label class="label">ルーム紹介</label>
-                <%= f.text_area :description, rows: 5, cols: 25, autofocus: true, autocomplete: "ルーム紹介", placeholder: "ルーム説明を入力", class: "form-control" %>
-              </div>
-              
-              <div class="form-group">
-                <label class="label">料金</label>
-                <%= f.number_field :price, autofocus: true, autocomplete: "料金", placeholder: "1日あたりの料金を入力", class: "form-control" %>
-              </div>
-              
-              <div class="form-group">
-                <label class="label">住所</label>
-                <%= f.text_field :address, autofocus: true, autocomplete: "住所", placeholder: "住所を入力", class: "form-control" %>
-              </div>
-              
-              <div class="form-group">
-                <label class="label">ルーム画像</label></br>
-                <button type="button" class="btn btn-outline-secondary rounded-pill">
-                  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-                </button>
-              </div>
-              
-              <div class="actions">
-                <%= f.submit "更新", class:"btn btn-blue btn-block" %>
+      </div>  
+      
+      <div class="col-md-4 margin">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h3>&yen; <%= @room.price.to_i %> / 日</h3>
+            <%= form_for @reservations do |f| %>
+              <%= f.label :start_date ,"開始日" %>
+              <%= f.date_field :start_date %>
+              <%= f.label :end_date ,"終了日" %>
+              <%= f.date_field :end_date %>
+              <%= f.label :people, "人数" %>
+              <%= f.number_field :people %>
               </div>
             <% end %>
           </div>
         </div>
       </div>
+      
     </div>
+    
   </div>
 </div>
