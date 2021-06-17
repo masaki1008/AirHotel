@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: {maximum: 50} 
   
   has_many :rooms
+  has_many :reservations
   
   mount_uploader :image, ImageUploader
 end

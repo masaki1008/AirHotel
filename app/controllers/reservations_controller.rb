@@ -1,4 +1,4 @@
-class ReservationController < ApplicationController
+class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
   end
@@ -8,14 +8,14 @@ class ReservationController < ApplicationController
   end
   
   def create
-    @reservation = current_user.reservations.new(params.require(:reservation).permit(:price, :start_date, :start_date, :total))
+    @reservation = current_user.reservations.new(params.require(:reservation).permit(:price, :start_date, :start_date, :people, :total))
     if @reservation.save
       flash[:notice] = "予約情報を確認してください"
-      redirect_to :@reservation
+      redirect_to action: :show
     else
       #こちらの処理が実行されます。
       flash[:alert] = "予約出来ませんでした..."
-      render "new"
+      render "rooms/show"
     end
   end
   
