@@ -9,12 +9,13 @@ class ReservationsController < ApplicationController
   
   def create
     @reservation = current_user.reservations.new(params.require(:reservation).permit(:price, :start_date, :start_date, :people, :total))
-    if @reservation.save
+    if @reservation.save!
       flash[:notice] = "予約情報を確認してください"
       redirect_to action: :show
     else
       #こちらの処理が実行されます。
       flash[:alert] = "予約出来ませんでした..."
+      @room = @reservation.room
       render "rooms/show"
     end
   end

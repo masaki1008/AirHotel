@@ -9,13 +9,13 @@
           <!--<div class="container">-->
           <h3 class="form-group">&yen; <%= @room.price.to_i %> / 日</h3>
           <div class="form-group">
-            <label style="margin-bottom: 5px;">開始日</label>
+            <label style="margin-bottom: 5px;">チェックイン</label>
             <%= @reservation.start_date %> 
             <!-- これいるかな？, class: "form-control" -->
           </div>
           
           <div class="form-group">
-            <label style="margin-bottom: 5px;">終了日</label>
+            <label style="margin-bottom: 5px;">チェックアウト</label>
             <%= @reservation.end_date %>
           </div>
           
