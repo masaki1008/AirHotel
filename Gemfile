@@ -73,3 +73,7 @@ gem 'pry-rails'
 group :development do
   gem 'rubocop-airbnb'
 end
+
+group :development, :test do
+  gem 'rails-erd'
+end
