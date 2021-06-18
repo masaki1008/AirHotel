@@ -10,8 +10,6 @@
         <%= link_to " 予約ルーム一覧", reservations_path, class: "btn btn-default" %>
       </div>
     </div>
-
-    <%= render "shared/error", obj: @reservation %>
     
     <div class="d-flex">
       <div class="col-md-7">
@@ -42,7 +40,7 @@
             <h3 class="form-group">&yen; <%= @room.price.to_i %> / 日</h3>
             
             <%= form_for @room.reservations.new do |f| %>
-              <%= f.hidden_field :room_id, :value => params[:id] %>
+              <%= f.hidden_field :room_id, :value => @room.id %>
                 <div class="form-group">
                   <label style="margin-bottom: 5px;">開始日</label>
                   <%= f.date_field :start_date,autocomplete: "開始日",class: "form-control" %>
@@ -61,7 +59,6 @@
                 <div class="actions">
                   <%= f.submit "予約", class:"btn btn-blue btn-block" %>
                 </div>
-              <% end %>
             <% end %>
           </div>
         </div>

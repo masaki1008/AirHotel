@@ -1,30 +1,44 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-5 d-grid gap-2 col-6 mx-auto">
       <div class="card card-default">
+        
         <div class="card-heading align-middle text-center">
           予約内容確認
         </div>
+        
         <div class="card-body">
-          <!--<div class="container">-->
-          <h3 class="form-group">&yen; <%= @room.price.to_i %> / 日</h3>
+
+          <h3 class="form-group">&yen; <%= @reservation.room.price.to_i %> / 日</h3>
+          
           <div class="form-group">
             <label style="margin-bottom: 5px;">チェックイン</label>
-            <%= @reservation.start_date %> 
-            <!-- これいるかな？, class: "form-control" -->
+            <div class="form-control" style="background-color: #e9ecef;"><%= @reservation.start_date %></div>
           </div>
           
           <div class="form-group">
             <label style="margin-bottom: 5px;">チェックアウト</label>
-            <%= @reservation.end_date %>
+            <div class="form-control" style="background-color: #e9ecef;"><%= @reservation.end_date %></div>
           </div>
           
           <div class="form-group">
-            <label style="margin-bottom: 5px;">人数</label>
-            <%= @reservation.Zeitwerk::NameError %>
+            <label style="margin-bottom: 5px;">宿泊日数：</label>
+            <%= @reservation.end_date - @reservation.start_date %>日
           </div>
-          <!--</div>-->
+          
+          <div class="form-group">
+            <label style="margin-bottom: 5px;">宿泊人数：</label>
+            <%= @reservation.people.to_i %>人
+          </div>
+          
+          <div class="form-group">
+            <label style="margin-bottom: 5px;">合計金額</label>
+            <div class="form-control" style="background-color: #e9ecef;"><%= @reservation.people.to_i %>人</div>
+            <!--ここは仮で入れている-->
+          </div>
+          
         </div>
+        
       </div>
     </div>
   </div>

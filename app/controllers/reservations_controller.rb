@@ -11,7 +11,8 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.new(params.require(:reservation).permit(:price, :start_date, :end_date, :people, :total, :room_id))
     if @reservation.save!
       flash[:notice] = "予約情報を確認してください"
-      redirect_to action: :show
+      redirect_to @reservation
+
     else
       #こちらの処理が実行されます。
       flash[:alert] = "予約出来ませんでした..."
