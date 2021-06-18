@@ -8,8 +8,7 @@
         </div>
         
         <div class="card-body">
-
-          <h3 class="form-group">&yen; <%= @reservation.room.price.to_i %> / 日</h3>
+          <h3 class="form-group" style="padding-bottom: 10px; border-bottom: 1px solid #eaedef;">&yen; <%= @reservation.room.price.to_i %> / 日</h3>
           
           <div class="form-group">
             <label style="margin-bottom: 5px;">チェックイン</label>
@@ -37,6 +36,19 @@
             <!--ここは仮で入れている-->
           </div>
           
+          <div class="form-group">
+            <p style="font-size: 13px; padding-bottom: 10px; border-bottom: 1px solid #eaedef;">上記内容でよろしければ「予約確定」を押してください</p>
+          </div>
+          
+          <%= form_for @reservation do |f| %>
+            <div class="form-group">
+              <%= f.submit "予約確定", class:"btn btn-blue btn-block" %>
+            </div>
+          <% end %>  
+          
+            <div class="form-group">
+              <%= link_to " ルーム詳細に戻る", :back, class: "btn btn-default btn-block" %>
+            </div>
         </div>
         
       </div>
