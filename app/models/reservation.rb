@@ -6,5 +6,4 @@ class Reservation < ApplicationRecord
   validates :end_date, presence: true
   validates :people, numericality: true
   
-  mount_uploader :image, ImageUploader
 end

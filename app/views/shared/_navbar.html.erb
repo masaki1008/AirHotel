@@ -7,8 +7,8 @@
     
     <div class="collapse navbar-collapse">
       <form class="d-flex">
-          <i class="fas fa-map-marker-alt"></i><input class="form-control me-2" type="search" placeholder="エリア" aria-label="Search">
-          <input class="form-control me-2" type="search" placeholder="キーワード" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="エリア" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="キーワード" aria-label="Search">
       </form>
     </div>
     
@@ -24,7 +24,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="<%="#{current_user.image_url}"%>" class="img-fluid" alt="Responsive image">
+            <img src="<%="#{current_user.image_url}"%>" class="img-fluid">
             <%= current_user.fullname %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
