@@ -11,18 +11,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>    
-    
+  <body>
+
     <%= render "shared/navbar" %>
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+    <%= render 'shared/message' %>
+
     <%= yield %>
-    
-    <footer class="text-center" style="background-color: #fff;">
-      <p>© 2020 AirHotel.INC.</p>
-    </footer>
+
   </body>
-  
 </html>

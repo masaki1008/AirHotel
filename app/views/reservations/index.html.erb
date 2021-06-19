@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    
+
     <div style="margin-bottom: 30px;">
       <div class="col-md-4 text-center d-grid gap-2 col-6 mx-auto d-flex">
         <%= link_to " ルーム登録", new_room_path, class: "btn btn-default" %>
@@ -8,7 +8,7 @@
         <%= link_to " 登録ルーム一覧", rooms_path, class: "btn btn-default" %>
       </div>
     </div>
-    
+
     <div class="col-md-15">
       <div class="text-center">
         <div class="card card-default text-center">
@@ -16,7 +16,7 @@
           予約ルーム一覧
           </div>
           </br>
-          
+
           <table>
             <thead>
               <tr>
@@ -29,15 +29,14 @@
                 <th>予約確定日時</th>
               </tr>
             </thead>
-     
+
             <tbody>
               <% @reservations.each do |reservation| %>
                 <tr>
                   <td class="td"><img src="<%= room.image_url %>" class="img-index"></td>
                   <td class="td text-nowrap"><%= link_to room.room_name, room %></td>
                   <td class="td" style="width: 200px;"><%= room.description %></td>
-                  <td class="td"> &yen; <%= room.price.to_i %></td>
-                  <!--この上に合計料金を表示させたい-->
+                  <td class="td"> &yen; <%= reservation.total.to_i %></td>
                   <td class="td"><%= reservation.start_date %></td>
                   <td class="td"><%= reservation.end_date %></td>
                   <td class="td"><%= reservation.created_at %></td>
@@ -46,10 +45,10 @@
               <% end %>
             </tbody>
           </table>
-          
+
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>
