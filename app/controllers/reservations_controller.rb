@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.new(params.require(:reservation).permit(:price, :start_date, :end_date, :people, :total, :room_id))
     @reservation.total = @reservation.room.price * (@reservation.end_date - @reservation.start_date).to_i * @reservation.people.to_i
     if @reservation.save!
-      flash[:notice] = "予約が完了しました"
+      flash[:notice] = "予約情報を確認してください"
       redirect_to @reservation
     else
       #こちらの処理が実行されます。
@@ -23,6 +23,17 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(params.require(:reservation).permit(:image, :room_name, :description, :total, :start_date, :end_date, :created_at))
+      flash[:notice] = "予約が完了しました"
+      redirect_to :reservations
+    else
+      flash[:alert] = "予約が出来ませんでした..."
+      redirect_to :@reservation
+    end
   end
 
   def destroy

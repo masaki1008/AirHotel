@@ -1,8 +1,9 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
+    @rooms = Room.where([prefecture:'東京']).all
   end
-  
+
   def new
     @room = Room.new
   end
@@ -36,7 +37,7 @@ class RoomsController < ApplicationController
       flash[:notice] = "ルームを削除しました"
       redirect_to :rooms
   end
-  
+
   protected
   # deviseのpermitted_parameterを追加する
   def configure_permitted_parameters
