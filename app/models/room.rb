@@ -10,9 +10,7 @@ class Room < ApplicationRecord
 
   def self.search(search)
     if self
-      Room.where(['address LIKE ?', "%#{search}%"])
-    elsif
-      Room.where(['description LIKE ?', "%#{search}%"])
+      Room.where(['address LIKE ? OR description LIKE ? OR room_name LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       Room.all
     end
