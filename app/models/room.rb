@@ -8,5 +8,15 @@ class Room < ApplicationRecord
   validates :address, presence: true
   validates :image, presence: true
 
+  def self.search(search)
+    if search
+      Room.where(['address LIKE ?', "%#{search}%"])
+    elsif
+      Room.where(['description LIKE ?', "%#{search}%"])
+    else
+      Room.all
+    end
+  end
+
   mount_uploader :image, ImageUploader
 end
