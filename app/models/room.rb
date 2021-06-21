@@ -9,7 +9,7 @@ class Room < ApplicationRecord
   validates :image, presence: true
 
   def self.search(search)
-    if search
+    if self
       Room.where(['address LIKE ?', "%#{search}%"])
     elsif
       Room.where(['description LIKE ?', "%#{search}%"])
