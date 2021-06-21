@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
-    @rooms = Room.where([prefecture:'東京']).all
   end
 
   def new

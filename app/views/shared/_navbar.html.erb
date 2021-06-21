@@ -5,14 +5,13 @@
       <form class="d-flex">
         <%= form_tag rooms_path, :method => 'get' do %>
           <div class="me-2">
-            <%= text_field_tag :search, params[:search], placeholder: "エリア",class: "form-control" %>
-            </div>
+            <%= text_field_tag :search, params[:address], placeholder: "エリア",class: "form-control" %>
+          </div>
           <div class="me-2">
-            <%= text_field_tag :search, params[:search], placeholder: "キーワード",class: "form-control" %>
+            <%= text_field_tag :search, params[:description], placeholder: "キーワード",class: "form-control" %>
           </div>
         <% end %>
       </form>
-      <%#　projects_pathはモデル名で読みかえること %>
     </div>
 
     <ul class="navbar-nav">

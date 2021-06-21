@@ -27,13 +27,8 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update(params.require(:reservation).permit(:image, :room_name, :description, :total, :start_date, :end_date, :created_at))
       flash[:notice] = "予約が完了しました"
       redirect_to :reservations
-    else
-      flash[:alert] = "予約が出来ませんでした..."
-      redirect_to :@reservation
-    end
   end
 
   def destroy

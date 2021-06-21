@@ -2,14 +2,14 @@
   <div class="container">
     <div class="eria">
       <div class="form-area">
-        <h3> AirHotel でまだ体験したことのない旅をしよう</h3>
-        </br>
-
-        <input type="text" class="form-control" placeholder="東京"></input>
-        </br>
-
-        <input type="submit" class="form-control btn btn-normal" value="探索"></input>
-        </br>
+        <h3 class="form-group"> AirHotel でまだ体験したことのない旅をしよう</h3>
+        <%= form_tag rooms_path, :method => 'get' do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "東京", class: "form-control" %>
+            </br>
+            <%= submit_tag "探索", :name => nil, class:"form-control btn btn-normal" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
