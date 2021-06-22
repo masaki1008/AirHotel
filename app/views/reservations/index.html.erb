@@ -34,7 +34,7 @@
               <% @reservations.each do |reservation| %>
                 <tr>
                   <td class="td"><img src="<%= reservation.room.image_url %>" class="img-index"></td>
-                  <td class="td text-nowrap"><%= link_to reservation.room.room_name, reservation %></td>
+                  <td class="td text-nowrap"><%= link_to reservation.room.room_name, room %></td>
                   <td class="td" style="width: 200px;"><%= reservation.room.description %></td>
                   <td class="td"> &yen; <%= reservation.total.to_i %></td>
                   <td class="td"><%= reservation.start_date %></td>
