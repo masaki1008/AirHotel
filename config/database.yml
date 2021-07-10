@@ -26,3 +26,6 @@ production:
 
 production:
   adapter: postgresql
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
