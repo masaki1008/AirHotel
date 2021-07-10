@@ -25,7 +25,9 @@ production:
   database: db/production.sqlite3
 
 production:
-  adapter: postgresql
-
-production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter : postgresql
+  encoding: utf8
+  database: dule662n520k4
+  port    : 5432
+  username: rcvpoxtqhprrzc
+  password: 9290154945e1540e6c7c192754fcb70eae10ffbf3555ccaced7ebf694ac466fb
